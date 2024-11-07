@@ -1,0 +1,562 @@
+:root {
+  --header-bg-color: rgb(1, 163, 144);
+  --footer-bg-color: rgb(1, 163, 144);
+  --body-bg-color: #e3e3e3;
+  --input-bg: #f2f2f2;
+  --input-bg-focus: #dbdbdb;
+  --text-color: #000;
+  --light-green: #00ad1d;
+  --dark-green: #016034;
+  --orange: #d97919;
+  --light-orange: #ffaf60;
+  --dark-orange: #c26100;
+  --x-dark-orange: rgb(157, 42, 1);
+  --light-red: rgb(236, 56, 56);
+  --white: #fff;
+  --light-black: rgb(23, 23, 23);
+  --light-blue: #0463ac;
+  --dark-blue: #070062;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 180px 0px 180px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: -2px 7px 5px -6px rgba(0, 0, 0, 0.61);
+}
+
+.Header > a {
+  margin: 0;
+  padding: 0;
+}
+
+.Header > a > img {
+  width: 150px;
+  margin: 2px 0;
+  padding: 0;
+}
+
+.header-nav > ul {
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
+  margin-top: 35px;
+  list-style-type: none;
+  display: flex;
+}
+
+.header-nav > ul > li {
+  list-style-type: none;
+  margin-right: 30px;
+  font-size: 18px;
+  font-family: PT Sans, Calibri, sans-serif;
+  font-weight: bolder;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.header-nav > ul > li > a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px; /* Add some padding to create space inside the box */
+  transition: all 0.3s ease; /* Smooth transition */
+  border-radius: 5px;
+}
+
+.header-nav > ul > li > a:hover {
+  background-color: orange;
+  color: white;
+  margin-right: 10px; /* Adds right margin on hover */
+  padding: 10px 14px; /* Expands padding slightly for a "pop" effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for depth */
+}
+
+/* Cart icon styling */
+.cart-icon {
+  color: #333;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.cart-icon:hover {
+  background-color: orange;
+  color: white;
+  padding: 10px 14px; /* Slightly larger padding on hover */
+  margin-right: 10px; /* Right margin on hover for effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Consistent button styling with list items */
+.logout-btn,
+.login-btn {
+  color: #333;
+  font-size: 18px;
+  font-family: PT Sans, Calibri, sans-serif; /* Ensure this matches the list item font */
+  font-weight: bolder; /* Match the font weight */
+  font-style: normal; /* Ensure normal font style */
+  padding: 8px 12px;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover,
+.login-btn:hover {
+  background-color: orange;
+  color: white;
+  padding: 10px 14px;
+  margin-right: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.body {
+  box-sizing: border-box;
+  padding-top: 120px;
+  min-height: calc(100vh - 100px);
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.search-bar > input {
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #aabcca;
+  border-radius: 20px;
+  width: 30rem;
+  padding: 8px 15px 8px 12px;
+  font-size: large;
+  font-weight: 500;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 60px;
+  padding: 0px;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: -1px 5px 10px 5px rgba(112, 112, 112, 0.2);
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  height: 350px;
+  width: 250px;
+  padding: 10px;
+}
+
+.card > img {
+  width: 100%; /* Full width of the card */
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Cover the area without distortion */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.card h3 {
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* Adjust this value as needed */
+}
+
+.card h5 {
+  color: gray; /* Subtitle color */
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.card span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  /* margin: 5px 0; */
+}
+
+.card > span > h4 {
+  margin-top: 7px;
+  padding: 0;
+  font-size: medium;
+}
+
+.restaurant-menu {
+  box-sizing: border-box;
+  margin-top: 80px;
+  min-height: calc(100vh - 100px);
+}
+
+.restaurant-summary {
+  display: flex;
+  height: 220px;
+  align-items: center;
+  background-color: var(--light-black);
+  color: var(--white);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.restaurant-summary-details {
+  margin: 0 0 0 20px;
+}
+
+.restaurant-summary-details > h2 {
+  margin: 0;
+  padding: 0;
+  max-width: 540px;
+  font-size: 40px;
+  font-weight: 300;
+  font-family: PT Sans, Calibri, sans-serif;
+  color: var(--light-white-text);
+}
+
+.restaurant-summary-details > p {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  color: inherit;
+  opacity: 0.7;
+  max-width: 540px;
+  font-size: 15px;
+}
+
+.restaurant-img {
+  width: 250px;
+  border-radius: 5px;
+  margin: 30px 0 15px 10px;
+}
+
+.restaurant-details {
+  color: inherit;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  gap: 10px;
+}
+
+.restaurant-menu-content {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-items-container {
+  margin-top: 30px;
+  width: 850px;
+}
+.menu-title-wrap {
+  padding: 20px;
+}
+.menu-count {
+  margin-top: 14px;
+  line-height: 1.3;
+  color: rgba(40, 44, 63, 0.45);
+  letter-spacing: -0.3px;
+  font-size: 1rem;
+}
+
+.menu-items-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  max-height: 250px;
+  padding: 20px;
+  border-bottom: rgba(40, 44, 63, 0.45) 0.5px solid;
+}
+.menu-item-details {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  overflow: hidden;
+}
+
+.item-title {
+  width: 60%;
+}
+.item-desc {
+  margin-top: 14px;
+  line-height: 1.3;
+  color: rgba(40, 44, 63, 0.45);
+  width: 60%;
+  letter-spacing: -0.3px;
+  font-size: 1rem;
+}
+.item-cost {
+  margin-top: 4px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #3e4152;
+  width: 40%;
+}
+
+.menu-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 200px;
+  overflow: hidden;
+}
+.menu-item-img {
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+}
+.add-btn {
+  background-color: var(--orange);
+  color: var(--text-color);
+  padding: 8px 25px;
+  cursor: pointer;
+  outline: none;
+  border-color: var(--dark-orange);
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.footer {
+  margin: 10px;
+  width: auto;
+  text-align: center;
+  background-color: white;
+  padding: 20px 10px 20px;
+  border-radius: 5px;
+  box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
+}
+
+.footer > i {
+  padding: 0 5px 0;
+  font-size: smaller;
+}
+
+.footer > a {
+  font-weight: 700;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+.footer > a:hover {
+  color: var(--x-dark-orange);
+}
+
+.fa-heart {
+  color: darkred;
+}
+
+.footer > strong {
+  padding-left: 5px;
+}
+
+.footer > strong > span {
+  color: var(--x-dark-orange);
+}
+
+/*Shimmer Card CSS Start*/
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.shimmer-card {
+  border-radius: 8px;
+  box-shadow: -1px 5px 10px 5px rgba(112, 112, 112, 0.2);
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  height: 350px;
+  width: 250px;
+  padding: 10px;
+}
+
+.shimmer-img {
+  width: 100%; /* Full width of the card */
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Cover the area without distortion */
+}
+
+.shimmer-title {
+  width: 60%;
+  margin-top: 10px;
+}
+
+.shimmer-tags {
+  width: 80%;
+  margin-top: 10px;
+}
+
+.shimmer-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20;
+  margin-top: 20px;
+}
+
+.shimmer-details-rating {
+  width: 100%;
+}
+
+.shimmer-container .shimmer-img {
+  height: 144px;
+  width: 230px;
+  border-radius: 5px;
+}
+/*Shimmer Card CSS End*/
+
+/* Shimmer Menu Card CSS Start */
+
+.restaurant-summary .shimmer-img {
+  height: 150px;
+  width: 250px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.shimmer-menu-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 848px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-color: #d3d5df;
+  box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+}
+
+.shimmer-item-details {
+  width: 438px;
+}
+
+.shimmer-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.shimmer-img-wrapper .shimmer-img {
+  width: 110px;
+  height: 96px;
+  border-radius: 5px;
+}
+
+.shimmer-img-wrapper .shimmer-btn {
+  width: 110px;
+  height: 34px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.shimmer-menu-title {
+  width: 550px;
+  margin-bottom: 40px;
+}
+
+.shimmer-items {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.shimmer-menu-content {
+  width: 25%;
+  margin-top: 10px;
+}
+
+.shimmer-menu-count {
+  width: 15%;
+  margin-top: 15px;
+}
+
+.shimmer-w50 {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.shimmer-w20 {
+  width: 20%;
+  margin-top: 20px;
+}
+
+.shimmer-w70 {
+  width: 70%;
+  margin-top: 20px;
+}
+/* Shimmer Menu Card CSS End */
+
+/*Animation to Shimmer Component Card and Menu card Start*/
+.stroke {
+  height: 15px;
+  background: #777;
+}
+
+.stroke-color {
+  background: #777;
+}
+
+.animate {
+  animation: shimmer 3s;
+  animation-iteration-count: infinite;
+  background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+  background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -1000px 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}
