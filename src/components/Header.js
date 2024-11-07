@@ -1,8 +1,9 @@
 import React from "react";
-import logo from "../../images/logo.png";
+import logo from "../../images/Logo.jpeg";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isLoggedin, setIsLoggedin] = useState(true);
@@ -14,13 +15,13 @@ const Header = () => {
       <div className="header-nav">
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/">About-Us</a>
+            <Link to="/about-us">About</Link>
           </li>
           <li>
-            <a href="/">Contact-Us</a>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
             <a href="/" className="cart-icon">
