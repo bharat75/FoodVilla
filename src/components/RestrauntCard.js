@@ -19,6 +19,7 @@ const RestaurantCard = ({
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <div className="card">
+        {console.log(IMG_CDN_URL + cloudinaryImageId)}
         <img src={IMG_CDN_URL + cloudinaryImageId} />
         <h3>{name}</h3>
         <h5>{cuisines.join(", ")}</h5>
