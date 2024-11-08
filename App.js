@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RestaurantDetail from "./src/components/RestaurantDetail";
 import Footer from "./src/components/Footer";
 import About from "./src/components/About";
+import Contact from "./src/components/Contact";
 
 const AppLayout = () => {
   return (
@@ -15,6 +16,7 @@ const AppLayout = () => {
         <Route path="/" element={<Body />} />
         <Route path="/restaurant/:id" element={<RestaurantDetail />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/contact-us" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>

@@ -628,3 +628,98 @@ body {
 .pizza:hover {
   transform: scale(1.05);
 }
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+  min-height: calc(100vh - 210px);
+  background-color: #f9f9f9;
+}
+
+.contact-us-image > img {
+  width: 350px;
+  margin-bottom: 30px; /* Adds space between image and form */
+  animation: fadeIn 1s ease-in-out; /* Subtle fade-in animation */
+}
+
+.contact-us-form > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.7s ease-in-out;
+}
+
+.contact-us-form > form input,
+.contact-us-form > form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.contact-us-form > form input:focus,
+.contact-us-form > form textarea:focus {
+  border-color: #ff6a00; /* Orange color on focus */
+}
+
+.contact-us-form > form textarea {
+  resize: none;
+  height: 100px;
+}
+
+.contact-us-form > form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff6a00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-us-form > form button:hover {
+  background-color: #ff8c33;
+  transform: scale(1.05);
+}
+
+.contact-us-form > form > span {
+  margin-top: 10px;
+  font-family: PT Sans, Calibri, sans-serif;
+  font-weight: 700;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
